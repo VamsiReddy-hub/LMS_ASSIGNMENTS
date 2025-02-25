@@ -1,0 +1,544 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMtsRu3lwzFUfpX8khGiK/P",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/VamsiReddy-hub/LMS_ASSIGNMENTS/blob/main/25/2/25ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MGasvO-OzHrD",
+        "outputId": "89d31996-37a8-41eb-ac34-59ba36b2e239"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: gTTS in /usr/local/lib/python3.11/dist-packages (2.5.4)\n",
+            "Requirement already satisfied: requests<3,>=2.27 in /usr/local/lib/python3.11/dist-packages (from gTTS) (2.32.3)\n",
+            "Requirement already satisfied: click<8.2,>=7.1 in /usr/local/lib/python3.11/dist-packages (from gTTS) (8.1.8)\n",
+            "Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.11/dist-packages (from requests<3,>=2.27->gTTS) (3.4.1)\n",
+            "Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.11/dist-packages (from requests<3,>=2.27->gTTS) (3.10)\n",
+            "Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.11/dist-packages (from requests<3,>=2.27->gTTS) (2.3.0)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.11/dist-packages (from requests<3,>=2.27->gTTS) (2025.1.31)\n"
+          ]
+        }
+      ],
+      "source": [
+        "!pip install gTTS\n",
+        "from gtts import gTTS\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "convert = gTTS(text=\"Hi, Sandeep go to hell\", lang=\"en\", slow=False)\n",
+        "convert.save(\"audio.mp3\")"
+      ],
+      "metadata": {
+        "id": "BdaBWG9Xz5fa"
+      },
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pip3 install pyttsx3"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2sDlrJqi5cFM",
+        "outputId": "8a5b3eb5-9b38-4168-bd3c-6b6dccc730e7"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: pyttsx3 in /usr/local/lib/python3.11/dist-packages (2.98)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!sudo apt install espeak # For espeak\n",
+        "!sudo apt install espeak-ng # For espeak-ng\n",
+        "import pyttsx3\n",
+        "engine = pyttsx3.init()\n",
+        "engine.say(\"Hi , Sandeep go to hell\")\n",
+        "engine.save_to_file(\"Hi, Sandeep go to hell\", \"output.mp3\")\n",
+        "engine.runAndWait()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NsoPz45P5ewT",
+        "outputId": "901cfac4-29fb-4d39-d624-d3516ffec8d1"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Reading package lists... Done\n",
+            "Building dependency tree... Done\n",
+            "Reading state information... Done\n",
+            "espeak is already the newest version (1.48.15+dfsg-3).\n",
+            "0 upgraded, 0 newly installed, 0 to remove and 22 not upgraded.\n",
+            "Reading package lists... Done\n",
+            "Building dependency tree... Done\n",
+            "Reading state information... Done\n",
+            "espeak-ng is already the newest version (1.50+dfsg-10ubuntu0.1).\n",
+            "0 upgraded, 0 newly installed, 0 to remove and 22 not upgraded.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "text=['This is introduction to NLP','It is likely to be useful, to people ',\\\n",
+        "      'Machine learning is the new electrcity','There would be less hype around AI and more action going forward',\\\n",
+        "      'python is the best tool!','R is good langauage',\\\n",
+        "      'I want more books like this']"
+      ],
+      "metadata": {
+        "id": "JZ5-zFqu5i19"
+      },
+      "execution_count": 11,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "engine = pyttsx3.init()\n",
+        "engine.say(text)\n",
+        "engine.runAndWait()"
+      ],
+      "metadata": {
+        "id": "3opO5pwI6vyA"
+      },
+      "execution_count": 12,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pyttsx3\n",
+        "engine = pyttsx3.init() # object creation\n",
+        "\"\"\" RATE\"\"\"\n",
+        "rate = engine.getProperty('rate')   # getting details of current speaking rate\n",
+        "print (rate)                        #printing current voice rate\n",
+        "engine.setProperty('rate', 150)     # setting up new voice rate\n",
+        "\"\"\"VOLUME\"\"\"\n",
+        "volume = engine.getProperty('volume')   #getting to know current volume level (min=0 and max=1)\n",
+        "print (volume)                          #printing current volume level\n",
+        "engine.setProperty('volume',1.0)    # setting up volume level  between 0 and 1\n",
+        "\"\"\"VOICE\"\"\"\n",
+        "voices = engine.getProperty('voices')       #getting details of current voice\n",
+        "#engine.setProperty('voice', voices[0].id)  #changing index, changes voices. o for male\n",
+        "engine.setProperty('voice', voices[1].id)   #changing index, changes voices. 1 for female\n",
+        "engine.say(\"Hello World!\")\n",
+        "engine.say('My current speaking rate is ' + str(rate))\n",
+        "engine.say('My current speaking volume is ' + str(volume))\n",
+        "engine.runAndWait()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vCGgk7EN6xqI",
+        "outputId": "33e65898-9127-4520-f431-96885cd839dd"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "150\n",
+            "1.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pip install goslate"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dBpl38kT60bx",
+        "outputId": "ff46359a-c48f-4544-d49f-1a134f1b696d"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: goslate in /usr/local/lib/python3.11/dist-packages (1.5.4)\n",
+            "Requirement already satisfied: futures in /usr/local/lib/python3.11/dist-packages (from goslate) (3.0.5)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import goslate"
+      ],
+      "metadata": {
+        "id": "zmYbe7Mg64I5"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import goslate\n",
+        "\n",
+        "# Define the text to be translated\n",
+        "text = ['This is introduction to NLP', 'It is likely to be useful, to people ', \\\n",
+        "        'Machine learning is the new electrcity', 'There would be less hype around AI and more action going forward', \\\n",
+        "        'python is the best tool!', 'R is good langauage', \\\n",
+        "        'I want more books like this']\n",
+        "\n",
+        "# Create a Goslate object\n",
+        "gs = goslate.Goslate()\n",
+        "\n",
+        "# Translate the text\n",
+        "translatedText = gs.translate(text, 'en')\n",
+        "\n",
+        "# Print the translated text\n",
+        "print(translatedText)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ENHQLwH27ABb",
+        "outputId": "532bc20b-c891-43f8-ded8-f252b2a263b2"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<generator object Goslate.translate.<locals>.<genexpr> at 0x7d16f1f19000>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pip install translate"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oJndFzx27Cah",
+        "outputId": "4bb1c9c4-5dd1-439f-b9bc-7edf421ccda5"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Collecting translate\n",
+            "  Downloading translate-3.6.1-py2.py3-none-any.whl.metadata (7.7 kB)\n",
+            "Requirement already satisfied: click in /usr/local/lib/python3.11/dist-packages (from translate) (8.1.8)\n",
+            "Requirement already satisfied: lxml in /usr/local/lib/python3.11/dist-packages (from translate) (5.3.1)\n",
+            "Requirement already satisfied: requests in /usr/local/lib/python3.11/dist-packages (from translate) (2.32.3)\n",
+            "Collecting libretranslatepy==2.1.1 (from translate)\n",
+            "  Downloading libretranslatepy-2.1.1-py3-none-any.whl.metadata (233 bytes)\n",
+            "Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.11/dist-packages (from requests->translate) (3.4.1)\n",
+            "Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.11/dist-packages (from requests->translate) (3.10)\n",
+            "Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.11/dist-packages (from requests->translate) (2.3.0)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.11/dist-packages (from requests->translate) (2025.1.31)\n",
+            "Downloading translate-3.6.1-py2.py3-none-any.whl (12 kB)\n",
+            "Downloading libretranslatepy-2.1.1-py3-none-any.whl (3.2 kB)\n",
+            "Installing collected packages: libretranslatepy, translate\n",
+            "Successfully installed libretranslatepy-2.1.1 translate-3.6.1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# # traslating text to telugu\n",
+        "from translate import Translator\n",
+        "translator= Translator(to_lang=\"te\")\n",
+        "translation = translator.translate(\"How are you?\")\n",
+        "translation"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "Cor3B1Fe8JY7",
+        "outputId": "9650ea7c-8799-4be6-9f8f-9065538fd705"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'ఎలా ఉనారు ?'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# # traslating text to marathi\n",
+        "from translate import Translator\n",
+        "translator= Translator(to_lang=\"mr\")\n",
+        "translation = translator.translate(\"How are you?\")\n",
+        "translation"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "JPPhN9Nl8O3i",
+        "outputId": "10c17b68-5913-41a5-f0b0-d4cb10f603d4"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'कशी आहेस?'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 18
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "cufEiLsu_vAq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# # traslating text to tamil\n",
+        "from translate import Translator\n",
+        "translator= Translator(to_lang=\"ta\")\n",
+        "translation = translator.translate(\"How are you?\")\n",
+        "translation"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "nxtNOGh68SzN",
+        "outputId": "ba04291a-14b1-46b0-84b2-b5e970c1189b"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'உங்கள் மகள் எப்படி இருக்கிறார்?'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pip install python-vlc\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "T2PHjq4v9trM",
+        "outputId": "c580b304-722d-41c6-c158-7b516e5bc2d0"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: python-vlc in /usr/local/lib/python3.11/dist-packages (3.0.21203)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!sudo apt-get update  # Update package lists (recommended)\n",
+        "!sudo apt-get install -y libvlc-dev  # Install libvlc-dev\n",
+        "!pip install --force-reinstall python-vlc  # Reinstall python-vlc"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "X5ywR47M-5pw",
+        "outputId": "e07dc5fa-3792-4acf-cd69-8e748e26d6c1"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\r0% [Working]\r            \rHit:1 http://archive.ubuntu.com/ubuntu jammy InRelease\n",
+            "\r0% [Connecting to security.ubuntu.com] [Connecting to cloud.r-project.org] [Con\r                                                                               \rHit:2 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  InRelease\n",
+            "\r0% [Waiting for headers] [Connecting to security.ubuntu.com] [Connecting to clo\r                                                                               \rHit:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease\n",
+            "Hit:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease\n",
+            "Hit:5 https://r2u.stat.illinois.edu/ubuntu jammy InRelease\n",
+            "Hit:6 http://security.ubuntu.com/ubuntu jammy-security InRelease\n",
+            "Hit:7 https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ InRelease\n",
+            "Hit:8 https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu jammy InRelease\n",
+            "Hit:9 https://ppa.launchpadcontent.net/graphics-drivers/ppa/ubuntu jammy InRelease\n",
+            "Hit:10 https://ppa.launchpadcontent.net/ubuntugis/ppa/ubuntu jammy InRelease\n",
+            "Reading package lists... Done\n",
+            "W: Skipping acquire of configured file 'main/source/Sources' as repository 'https://r2u.stat.illinois.edu/ubuntu jammy InRelease' does not seem to provide it (sources.list entry misspelt?)\n",
+            "Reading package lists... Done\n",
+            "Building dependency tree... Done\n",
+            "Reading state information... Done\n",
+            "libvlc-dev is already the newest version (3.0.16-1build7).\n",
+            "0 upgraded, 0 newly installed, 0 to remove and 26 not upgraded.\n",
+            "Collecting python-vlc\n",
+            "  Using cached python_vlc-3.0.21203-py3-none-any.whl.metadata (4.1 kB)\n",
+            "Using cached python_vlc-3.0.21203-py3-none-any.whl (87 kB)\n",
+            "Installing collected packages: python-vlc\n",
+            "  Attempting uninstall: python-vlc\n",
+            "    Found existing installation: python-vlc 3.0.21203\n",
+            "    Uninstalling python-vlc-3.0.21203:\n",
+            "      Successfully uninstalled python-vlc-3.0.21203\n",
+            "Successfully installed python-vlc-3.0.21203\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import vlc\n",
+        "\n",
+        "# Specify the path to the audio file\n",
+        "audio_file = \"audio.mp3\"\n",
+        "\n",
+        "# Create a VLC instance and media player\n",
+        "instance = vlc.Instance()\n",
+        "p = instance.media_player_new()\n",
+        "\n",
+        "# Load the media file\n",
+        "media = instance.media_new(audio_file)\n",
+        "p.set_media(media)\n",
+        "\n",
+        "# Play the audio\n",
+        "p.play()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7YYrTB94--RY",
+        "outputId": "ca1f84d6-971a-49b5-cab1-ba2315c82363"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "HYatDjEa_l_B"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
